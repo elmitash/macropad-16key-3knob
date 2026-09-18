@@ -8,7 +8,7 @@
 
 import {
   KIND_KEYBOARD, KIND_MEDIA, KIND_MOUSE, LED_SLOTS, MAX_CODES,
-  isMod, isPhysical,
+  isMod, isPhysical, MAX_KEY_ID,
 } from './catalog.js';
 
 export const REPORT_ID = 0x03;
@@ -191,7 +191,7 @@ export function decodeLeds(bytes) {
  * know which they asked for; this only reports what a report could be. */
 export function looksLikeBinding(bytes) {
   const r = toBytes(bytes);
-  return r[0] === OP_READ && r[1] >= 1 && r[1] <= 24 &&
+  return r[0] === OP_READ && r[1] >= 1 && r[1] <= MAX_KEY_ID &&
          r[2] >= 1 && r[2] <= 3 && r[3] >= 1 && r[3] <= 3;
 }
 
