@@ -1,5 +1,9 @@
 # 514c:8850 16키 3노브(16-Key 3-Knob) 매크로 키패드 리눅스 설정 도구
 
+> 🌐 **웹에서 설치 없이 바로 사용하기 (Live WebHID App):**  
+> 👉 **[https://elmitash.github.io/macropad-16key-3knob/](https://elmitash.github.io/macropad-16key-3knob/)**  
+> *(Chrome, Edge, Whale, Brave 등 WebHID 지원 브라우저에서 키패드를 USB로 연결 후 바로 사용 가능합니다)*
+
 중국산 WCH CH57x 기반 매크로 키패드 (**USB VID: `0x514C`, PID: `0x8850`**) 중 **16개 기계식 스위치(4x4) + 3개 로터리 엔코더(노브)** 제품을 위한 리눅스 전용 및 크로스 플랫폼 롬(ROM) 설정 도구입니다.
 
 기존 12키 4노브 전용 툴(`takamorita/MiniKeyboard-514c-8850`)의 슬롯 불일치 문제를 해결하여, **16개 키와 3개 노브(총 25개 슬롯)** 및 **3개 레이어(총 75개 바인딩)**를 완벽하게 지원합니다.
