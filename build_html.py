@@ -477,8 +477,11 @@ function applyCurrentLang(){
   }
 
   // 4. Update pad hint & wireless warning note
-  const hintEl = $('#padHint');
-  if (hintEl) hintEl.innerHTML = CAT.t('pad.hint');
+  if (typeof syncPadHint === 'function') syncPadHint();
+  else {
+    const hintEl = $('#padHint');
+    if (hintEl) hintEl.innerHTML = CAT.t('pad.hint');
+  }
   const wireEl = $('#wirelessNote');
   if (wireEl) wireEl.textContent = CAT.wirelessNote();
 

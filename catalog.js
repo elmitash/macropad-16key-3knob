@@ -153,13 +153,16 @@ export const STRINGS = {
 
   // -- pad
   'pad.hint':           { en: 'Click a key or knob to edit its input sequence.',
-                          ja: 'キー・ノブをクリックすると入力シーケンスを編集できます。' },
+                          ja: 'キー・ノブをクリックすると入力シーケンスを編集できます。',
+                          ko: '키나 노브를 클릭하여 입력 시퀀스를 편집할 수 있습니다.' },
   'pad.hintPaint':      { en: 'Click a key to make it the target for colours. (Close LED to go back to editing input sequences.)',
-                          ja: 'キーをクリックすると、そのキーが色の適用先になります。（LEDを閉じるとクリックで入力シーケンスの編集に戻ります）' },
+                          ja: 'キーをクリックすると、そのキーが色の適用先になります。（LEDを閉じるとクリックで入力シーケンスの編集に戻ります）',
+                          ko: '키를 클릭하면 해당 키가 색상 적용 대상이 됩니다. (키 입력 편집으로 돌아가려면 하단 LED 창을 닫으세요)' },
   'pad.hintHover':      { en: 'Hover a key to see how it lights when pressed. (Click to edit its input sequence.)',
-                          ja: 'キーにマウスを乗せると、押したときの光り方が見えます。（クリックすると入力シーケンスを編集できます）' },
-  'pad.layer':          { en: 'Layer {n}',             ja: 'レイヤ {n}' },
-  'pad.knob':           { en: 'Knob {n}',              ja: 'ノブ {n}' },
+                          ja: 'キーにマウスを乗せると、押したときの光り方が見えます。（クリックすると入力シーケンスを編集できます）',
+                          ko: '키에 마우스를 올리면 눌렸을 때의 LED 발광 효과를 미리 볼 수 있습니다. (클릭하면 키 입력 편집)' },
+  'pad.layer':          { en: 'Layer {n}',             ja: 'レイヤ {n}',            ko: '레이어 {n}' },
+  'pad.knob':           { en: 'Knob {n}',              ja: 'ノブ {n}',              ko: '노브 {n}' },
 
   // -- LED area
   'led.mode':           { en: 'Mode',                  ja: 'モード',               ko: 'LED 모드' },
