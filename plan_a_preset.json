@@ -1,0 +1,1019 @@
+{
+  "layers": {
+    "1": [
+      {
+        "keyId": 1,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          104
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 2,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          105
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 3,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          106
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 4,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          107
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 5,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          108
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 6,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          109
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 7,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          110
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 8,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          111
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 9,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          112
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 10,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          113
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 11,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          114
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 12,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          115
+        ],
+        "delays": [
+          0
+        ]
+      },
+      {
+        "keyId": 13,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          104
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 14,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          105
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 15,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          106
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 16,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          107
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 17,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          108
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 18,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          109
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 19,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          110
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 20,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          111
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 21,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          112
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 22,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          113
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 23,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          114
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 24,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          242,
+          115
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 25,
+        "layer": 1,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          104
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "2": [
+      {
+        "keyId": 1,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          104
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 2,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          105
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 3,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          106
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 4,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          107
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 5,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          108
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 6,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          109
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 7,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          110
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 8,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          111
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 9,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          112
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 10,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          113
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 11,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          114
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 12,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          115
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 13,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          105
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 14,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          106
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 15,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          107
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 16,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          108
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 17,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          109
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 18,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          110
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 19,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          111
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 20,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          112
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 21,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          113
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 22,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          114
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 23,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          242,
+          115
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 24,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          243,
+          104
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 25,
+        "layer": 2,
+        "kind": 1,
+        "codes": [
+          241,
+          243,
+          105
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "3": [
+      {
+        "keyId": 1,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          104
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 2,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          105
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 3,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          106
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 4,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          107
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 5,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          108
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 6,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          109
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 7,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          110
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 8,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          111
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 9,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          112
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 10,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          113
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 11,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          114
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 12,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          115
+        ],
+        "delays": [
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 13,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          104
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 14,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          105
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 15,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          106
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 16,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          107
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 17,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          108
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 18,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          109
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 19,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          110
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 20,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          111
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 21,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          112
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 22,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          113
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 23,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          114
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 24,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          243,
+          242,
+          115
+        ],
+        "delays": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "keyId": 25,
+        "layer": 3,
+        "kind": 1,
+        "codes": [
+          241,
+          243,
+          242,
+          104
+        ],
+        "delays": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "version": 1,
+  "device": "514c:8850-16k3k"
+}

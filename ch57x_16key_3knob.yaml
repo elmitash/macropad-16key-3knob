@@ -1,0 +1,60 @@
+# ch57x-keyboard-tool mapping configuration for 16-key 3-knob (514c:8850)
+# Use with: ch57x-keyboard-tool upload ch57x_16key_3knob.yaml
+
+model: ch57x-3
+orientation: normal
+rows: 4
+columns: 4
+knobs: 3
+
+layers:
+  # Layer 1 (기본 모드)
+  - buttons:
+      - ["f13", "f14", "f15", "f16"]
+      - ["f17", "f18", "f19", "f20"]
+      - ["f21", "f22", "f23", "f24"]
+      - ["", "", "", ""] # 빈 칸은 눌러도 아무 동작도 하지 않음 (None)
+    knobs:
+      - ccw: "volumedown"
+        press: "mute"
+        cw: "volumeup"
+      - ccw: "wheeldown"
+        press: "click(middle)"
+        cw: "wheelup"
+      - ccw: "prev"
+        press: "play"
+        cw: "next"
+
+  # Layer 2 (작업/단축키 모드)
+  - buttons:
+      - ["ctrl-z", "ctrl-y", "ctrl-c", "ctrl-v"]
+      - ["ctrl-s", "ctrl-a", "ctrl-f", "ctrl-w"]
+      - ["f13", "f14", "f15", "f16"]
+      - ["", "", "", ""]
+    knobs:
+      - ccw: "volumedown"
+        press: "mute"
+        cw: "volumeup"
+      - ccw: "ctrl-wheeldown"
+        press: "click"
+        cw: "ctrl-wheelup"
+      - ccw: "left"
+        press: "enter"
+        cw: "right"
+
+  # Layer 3 (숫자패드 및 미디어 모드)
+  - buttons:
+      - ["7", "8", "9", "backspace"]
+      - ["4", "5", "6", "tab"]
+      - ["1", "2", "3", "enter"]
+      - ["0", ".", "ctrl-z", ""]
+    knobs:
+      - ccw: "volumedown"
+        press: "mute"
+        cw: "volumeup"
+      - ccw: "wheeldown"
+        press: "click(middle)"
+        cw: "wheelup"
+      - ccw: "prev"
+        press: "play"
+        cw: "next"

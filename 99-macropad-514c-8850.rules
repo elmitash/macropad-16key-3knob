@@ -1,0 +1,11 @@
+# Linux udev rules for 514c:8850 Macro Keypad (16-key 3-knob / 12-key 4-knob)
+# Allows non-root users and WebHID browsers to read/write the device.
+#
+# Installation:
+#   sudo cp 99-macropad-514c-8850.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules
+#   sudo udevadm trigger
+# (After this, unplug and replug your keypad)
+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="514c", ATTRS{idProduct}=="8850", MODE="0666", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="514c", ATTRS{idProduct}=="8850", MODE="0666", TAG+="uaccess"
