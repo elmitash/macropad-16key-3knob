@@ -793,9 +793,9 @@
     "led.applyKey": { en: "Apply to Key {n}", ja: "Key {n} \u306B\u9069\u7528", ko: "Key {n}\uC5D0 \uC801\uC6A9" },
     "led.randomColors": { en: "\u{1F3B2} Random Colors", ja: "\u{1F3B2} \u5168\u30E9\u30F3\u30C0\u30E0\u8272", ko: "\u{1F3B2} \uC804\uCCB4 \uB79C\uB364 \uC0C9\uC0C1" },
     "led.writeHint": {
-      en: 'Changes are applied together via "Write to device" in the header.',
-      ja: "\u5909\u66F4\u306F\u30D8\u30C3\u30C0\u30FC\u306E\u300C\u672C\u4F53\u306B\u66F8\u304D\u8FBC\u3080\u300D\u3067\u307E\u3068\u3081\u3066\u53CD\u6620\u3055\u308C\u307E\u3059\u3002",
-      ko: "\uBCC0\uACBD \uC0AC\uD56D\uC740 \uC0C1\uB2E8\uC758 [\uAE30\uAE30 \uB86C\uC5D0 \uC4F0\uAE30] \uBC84\uD2BC\uC744 \uB20C\uB7EC\uC57C \uAE30\uAE30\uC5D0 \uCD5C\uC885 \uC800\uC7A5\uB429\uB2C8\uB2E4."
+      en: 'Click "Write to device" to save. (Reconnecting USB is required to apply changes to physical LEDs)',
+      ja: "\u300C\u672C\u4F53\u306B\u66F8\u304D\u8FBC\u3080\u300D\u3067\u4FDD\u5B58\u3055\u308C\u307E\u3059\u3002\uFF08\u203B\u7269\u7406LED\u3078\u306E\u53CD\u6620\u306B\u306FUSB\u306E\u629C\u304D\u5DEE\u3057\u30FB\u518D\u63A5\u7D9A\u304C\u5FC5\u8981\u3067\u3059\uFF09",
+      ko: "\uC0C1\uB2E8\uC758 [\uAE30\uAE30 \uB86C\uC5D0 \uC4F0\uAE30]\uB97C \uB20C\uB7EC \uC800\uC7A5\uD558\uC138\uC694. (\u203B \uC2E4\uC81C \uD0A4\uD328\uB4DC LED \uC801\uC6A9\uC744 \uC704\uD574 USB \uCF00\uC774\uBE14\uC744 \uBE90\uB2E4\uAC00 \uB2E4\uC2DC \uC5F0\uACB0\uD574 \uC8FC\uC138\uC694)"
     },
     "led.targetOne": {
       en: '<span style="color:var(--accent);font-weight:700">\u{1F3AF} Key {n}{q} Selected</span>: Choosing a colour or clicking [Apply to Key {n}] sets <b>Key {n}</b> only. (Click the key again to return to all keys)',
@@ -1005,8 +1005,9 @@
       ja: "{n} \u4EF6\u66F8\u304D\u8FBC\u307F\u307E\u3057\u305F\u304C\u3001{p} \u4EF6\u304C\u53CD\u6620\u3055\u308C\u3066\u3044\u307E\u305B\u3093"
     },
     "wr.done": {
-      en: "Wrote {n} changes to the device",
-      ja: "{n} \u4EF6\u3092\u672C\u4F53\u306B\u66F8\u304D\u8FBC\u307F\u307E\u3057\u305F"
+      en: "Wrote {n} changes to the device. (Please unplug and replug USB to reflect new LED modes)",
+      ja: "{n} \u4EF6\u3092\u672C\u4F53\u306B\u66F8\u304D\u8FBC\u307F\u307E\u3057\u305F\u3002\uFF08\u203BLED\u306E\u5909\u66F4\u3092\u53CD\u6620\u3059\u308B\u306B\u306FUSB\u3092\u629C\u304D\u5DEE\u3057\u3057\u3066\u304F\u3060\u3055\u3044\uFF09",
+      ko: "{n}\uAC74\uC758 \uBCC0\uACBD\uC0AC\uD56D\uC744 \uAE30\uAE30 \uB86C\uC5D0 \uAE30\uB85D\uD588\uC2B5\uB2C8\uB2E4. (\u203B LED \uBCC0\uACBD \uC0AC\uD56D\uC744 \uBC18\uC601\uD558\uB824\uBA74 \uD0A4\uD328\uB4DC USB\uB97C \uBE90\uB2E4\uAC00 \uB2E4\uC2DC \uC5F0\uACB0\uD574 \uC8FC\uC138\uC694)"
     },
     "wr.failed": {
       en: "Failed after writing {n}: {e}",
@@ -1494,42 +1495,89 @@
   }
   var LED_MODES = {
     0: "off",
-    1: "static"
+    1: "static",
+    2: "reactive",
+    3: "ripple",
+    4: "wave",
+    5: "fade"
   };
   var LED_SLOTS = 16;
   var LED_MODE_HELP = {
     ko: {
       0: "LED\uB97C \uC644\uC804\uD788 \uB055\uB2C8\uB2E4.",
-      1: "\uC9C0\uC815\uD55C \uC0C9\uC0C1\uC73C\uB85C \uD0A4\uD328\uB4DC \uBC31\uB77C\uC774\uD2B8\uB97C \uD56D\uC0C1 \uCF2D\uB2C8\uB2E4."
+      1: "\uC9C0\uC815\uD55C \uC0C9\uC0C1\uC73C\uB85C \uD0A4\uD328\uB4DC \uBC31\uB77C\uC774\uD2B8\uB97C \uD56D\uC0C1 \uCF2D\uB2C8\uB2E4.",
+      2: "\uD3C9\uC18C\uC5D4 \uC5B4\uB461\uB2E4\uAC00 \uD0A4\uB97C \uB204\uB97C \uB54C\uB9CC \uC9C0\uC815\uD55C \uC0C9\uC0C1\uC73C\uB85C \uC810\uB4F1\uD569\uB2C8\uB2E4.",
+      3: "\uD0A4\uB97C \uB204\uB974\uBA74 \uBB3C\uBC29\uC6B8\uC774 \uBC88\uC9C0\uB4EF \uD30C\uBB38(\uB9AC\uD50C) \uD6A8\uACFC\uAC00 \uD37C\uC9D1\uB2C8\uB2E4.",
+      4: "\uBB34\uC9C0\uAC1C \uC0C9\uC0C1\uC774 \uC67C\uCABD\uC5D0\uC11C \uC624\uB978\uCABD\uC73C\uB85C \uBB3C\uACB0\uCE58\uB4EF \uD750\uB985\uB2C8\uB2E4 (\uC6E8\uC774\uBE0C).",
+      5: "\uBB34\uC9C0\uAC1C \uC0C9\uC0C1\uC774 \uD0A4\uD328\uB4DC \uC804\uCCB4\uC5D0\uC11C \uC740\uC740\uD558\uAC8C \uBCC0\uD569\uB2C8\uB2E4 (\uADF8\uB77C\uB370\uC774\uC158)."
     },
     en: {
       0: "Off \u2014 no lights",
-      1: "Always on \u2014 lights up with your chosen colours"
+      1: "Always on \u2014 lights up with your chosen colours",
+      2: "Light on press \u2014 dim until pressed, lights with your chosen colours",
+      3: "Ripple on press \u2014 sends out a wave from the pressed key",
+      4: "Rainbow wave \u2014 rainbow sweeps across the pad from left to right",
+      5: "Rainbow fade \u2014 all keys shift through the rainbow together"
     },
     ja: {
       0: "\u6D88\u706F",
-      1: "\u5E38\u6642\u70B9\u706F \u2014 \u30AD\u30FC\u3054\u3068\u306E\u8272\u304C\u51FA\u307E\u3059"
+      1: "\u5E38\u6642\u70B9\u706F \u2014 \u30AD\u30FC\u3054\u3068\u306E\u8272\u304C\u51FA\u307E\u3059",
+      2: "\u62BC\u3059\u3068\u70B9\u706F \u2014 \u666E\u6BB5\u306F\u6697\u304F\u3001\u62BC\u3057\u305F\u30AD\u30FC\u3060\u3051\u5149\u308A\u307E\u3059",
+      3: "\u6CE2\u7D0B \u2014 \u62BC\u3057\u305F\u30AD\u30FC\u304B\u3089\u5149\u306E\u6CE2\u304C\u5E83\u304C\u308A\u307E\u3059",
+      4: "\u8679\u8272\u306E\u6CE2 \u2014 \u5DE6\u304B\u3089\u53F3\u3078\u8679\u304C\u6D41\u308C\u307E\u3059",
+      5: "\u8679\u8272\u306E\u30D5\u30A7\u30FC\u30C9 \u2014 \u5168\u30AD\u30FC\u304C\u63C3\u3063\u3066\u8679\u8272\u306B\u79FB\u308A\u5909\u308F\u308A\u307E\u3059"
     }
   };
   var LED_MODE_TRAITS = {
     0: { perKey: false, animated: false },
-    1: { perKey: true, animated: false }
+    1: { perKey: true, animated: false },
+    2: { perKey: true, animated: false },
+    3: { perKey: true, animated: true },
+    4: { perKey: false, animated: true },
+    5: { perKey: false, animated: true }
   };
   var LED_NO_COLOR_REASON = {
     ko: {
-      0: "\uC18C\uB4F1 \uBAA8\uB4DC\uC5D0\uC11C\uB294 \uC0C9\uC0C1\uC774 \uAEBC\uC9D1\uB2C8\uB2E4. \uBD88\uC744 \uCF1C\uB824\uBA74 [\uC0C1\uC2DC \uC810\uB4F1]\uC744 \uC120\uD0DD\uD558\uC138\uC694."
+      0: "\uC18C\uB4F1 \uBAA8\uB4DC\uC5D0\uC11C\uB294 \uC0C9\uC0C1\uC774 \uAEBC\uC9D1\uB2C8\uB2E4. \uBD88\uC744 \uCF1C\uB824\uBA74 [\uC0C1\uC2DC \uC810\uB4F1]\uC744 \uC120\uD0DD\uD558\uC138\uC694.",
+      4: "\uC6E8\uC774\uBE0C \uBAA8\uB4DC\uB294 \uD38C\uC6E8\uC5B4 \uC790\uCCB4 \uBB34\uC9C0\uAC1C \uC0C9\uC0C1\uC744 \uC0AC\uC6A9\uD558\uBBC0\uB85C \uAC1C\uBCC4 \uC0C9\uC0C1\uC740 \uC801\uC6A9\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.",
+      5: "\uD398\uC774\uB4DC \uBAA8\uB4DC\uB294 \uD38C\uC6E8\uC5B4 \uC790\uCCB4 \uBB34\uC9C0\uAC1C \uC0C9\uC0C1\uC744 \uC0AC\uC6A9\uD558\uBBC0\uB85C \uAC1C\uBCC4 \uC0C9\uC0C1\uC740 \uC801\uC6A9\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
     },
     en: {
-      0: "Off mode cannot use LED colours. Choose Always on to set colours."
+      0: "Off mode cannot use LED colours. Choose Always on to set colours.",
+      4: "Rainbow wave mode generates its own colours from firmware.",
+      5: "Rainbow fade mode generates its own colours from firmware."
     },
     ja: {
-      0: "\u6D88\u706F\u30E2\u30FC\u30C9\u3067\u306F LED\u306E\u8272\u3092\u8A2D\u5B9A\u3067\u304D\u307E\u305B\u3093\u3002\u300C\u5E38\u6642\u70B9\u706F\u300D\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044\u3002"
+      0: "\u6D88\u706F\u30E2\u30FC\u30C9\u3067\u306F LED\u306E\u8272\u3092\u8A2D\u5B9A\u3067\u304D\u307E\u305B\u3093\u3002\u300C\u5E38\u6642\u70B9\u706F\u300D\u3092\u9078\u3093\u3067\u304F\u3060\u3055\u3044\u3002",
+      4: "\u8679\u8272\u306E\u6CE2\u30E2\u30FC\u30C9\u306F\u672C\u4F53\u304C\u8272\u3092\u4F5C\u308B\u305F\u3081\u3001\u30D1\u30EC\u30C3\u30C8\u306E\u8272\u306F\u4F7F\u308F\u308C\u307E\u305B\u3093\u3002",
+      5: "\u8679\u8272\u306E\u30D5\u30A7\u30FC\u30C9\u30E2\u30FC\u30C9\u306F\u672C\u4F53\u304C\u8272\u3092\u4F5C\u308B\u305F\u3081\u3001\u30D1\u30EC\u30C3\u30C8\u306E\u8272\u306F\u4F7F\u308F\u308C\u307E\u305B\u3093\u3002"
     }
   };
   var LED_MODE_LABELS = {
-    ko: { 0: "0 \u2014 \uC18C\uB4F1 (LED \uB044\uAE30)", 1: "1 \u2014 \uC0C1\uC2DC \uC810\uB4F1 (LED \uCF1C\uAE30)" },
-    en: { 0: "0 \u2014 Off", 1: "1 \u2014 Always on" },
-    ja: { 0: "0 \u2014 \u6D88\u706F", 1: "1 \u2014 \u5E38\u6642\u70B9\u706F" }
+    ko: {
+      0: "\uC18C\uB4F1 (LED \uB044\uAE30)",
+      1: "\uC0C1\uC2DC \uC810\uB4F1 (LED \uCF1C\uAE30)",
+      2: "\uB204\uB97C \uB54C \uC810\uB4F1 (\uB9AC\uC561\uD2F0\uBE0C)",
+      3: "\uD30C\uBB38 (\uB204\uB97C \uB54C \uB9AC\uD50C \uD655\uC0B0)",
+      4: "\uBB34\uC9C0\uAC1C \uC6E8\uC774\uBE0C (\uD750\uB984)",
+      5: "\uBB34\uC9C0\uAC1C \uD398\uC774\uB4DC (\uC804\uCCB4 \uC21C\uD658)"
+    },
+    en: {
+      0: "Off",
+      1: "Always on",
+      2: "Light on press",
+      3: "Ripple on press",
+      4: "Rainbow wave",
+      5: "Rainbow fade"
+    },
+    ja: {
+      0: "\u6D88\u706F",
+      1: "\u5E38\u6642\u70B9\u706F",
+      2: "\u62BC\u3059\u3068\u70B9\u706F",
+      3: "\u6CE2\u7D0B",
+      4: "\u8679\u8272\u306E\u6CE2",
+      5: "\u8679\u8272\u306E\u30D5\u30A7\u30FC\u30C9"
+    }
   };
   var ledModeLabel = (n, lang = LANG) => (LED_MODE_LABELS[lang] || LED_MODE_LABELS.en)[n] || LED_MODE_LABELS.en[n] || LED_MODES[n] || String(n);
   var ledModeList = (lang = LANG) => {
@@ -2828,7 +2876,7 @@ async function boot(){
          wireless:CAT.wirelessNote(), max_codes:CAT.MAX_CODES,
          targets:CAT.allTargets().map(t=>t.name) };
   const vs=$('#ver'); if(vs) vs.textContent=vs.dataset.v||'';
-  META.modes.forEach(m=>$('#ledMode').add(new Option(m.n+' — '+(m.label||m.name),m.n)));
+  // ledMode options populated in applyCurrentLang()
   $('#layerBtns').innerHTML=[1,2,3].map(n=>
     `<button id="lb${n}" onclick="setLayer(${n})">${esc(CAT.t('pad.layer',{n}))}</button>`).join('');
   $('#swatches').innerHTML=(META.swatches||[]).flat().map(h=>

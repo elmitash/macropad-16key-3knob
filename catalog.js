@@ -170,9 +170,9 @@ export const STRINGS = {
   'led.applyAll':       { en: 'Apply to all keys',     ja: '全キーに適用',         ko: '전체 키에 적용' },
   'led.applyKey':       { en: 'Apply to Key {n}',      ja: 'Key {n} に適用',       ko: 'Key {n}에 적용' },
   'led.randomColors':   { en: '🎲 Random Colors',      ja: '🎲 全ランダム色',       ko: '🎲 전체 랜덤 색상' },
-  'led.writeHint':      { en: 'Changes are applied together via "Write to device" in the header.',
-                          ja: '変更はヘッダーの「本体に書き込む」でまとめて反映されます。',
-                          ko: '변경 사항은 상단의 [기기 롬에 쓰기] 버튼을 눌러야 기기에 최종 저장됩니다.' },
+  'led.writeHint':      { en: 'Click "Write to device" to save. (Reconnecting USB is required to apply changes to physical LEDs)',
+                          ja: '「本体に書き込む」で保存されます。（※物理LEDへの反映にはUSBの抜き差し・再接続が必要です）',
+                          ko: '상단의 [기기 롬에 쓰기]를 눌러 저장하세요. (※ 실제 키패드 LED 적용을 위해 USB 케이블을 뺐다가 다시 연결해 주세요)' },
   'led.targetOne':      { en: '<span style="color:var(--accent);font-weight:700">🎯 Key {n}{q} Selected</span>: Choosing a colour or clicking [Apply to Key {n}] sets <b>Key {n}</b> only. (Click the key again to return to all keys)',
                           ja: '<span style="color:var(--accent);font-weight:700">🎯 Key {n}{q} 選択中</span>: 色見本・任意色を選ぶか［Key {n} に適用］を押すと <b>Key {n}</b> のみに適用されます。（もう一度キーをクリックすると全キー対象に戻ります）',
                           ko: '<span style="color:var(--accent);font-weight:700">🎯 Key {n}{q} 선택됨</span>: 색상표나 임의색을 고르거나 [Key {n}에 적용]을 누르면 <b>Key {n}</b>에만 색상이 적용됩니다. (전체 적용으로 돌아가려면 해당 키를 다시 클릭)' },
@@ -308,8 +308,9 @@ export const STRINGS = {
   'wr.verifying':       { en: 'Checking the device…',   ja: '本体を確認しています…' },
   'wr.partial':         { en: 'Wrote {n}, but {p} did not take effect',
                           ja: '{n} 件書き込みましたが、{p} 件が反映されていません' },
-  'wr.done':            { en: 'Wrote {n} changes to the device',
-                          ja: '{n} 件を本体に書き込みました' },
+  'wr.done':            { en: 'Wrote {n} changes to the device. (Please unplug and replug USB to reflect new LED modes)',
+                          ja: '{n} 件を本体に書き込みました。（※LEDの変更を反映するにはUSBを抜き差ししてください）',
+                          ko: '{n}건의 변경사항을 기기 롬에 기록했습니다. (※ LED 변경 사항을 반영하려면 키패드 USB를 뺐다가 다시 연결해 주세요)' },
   'wr.failed':          { en: 'Failed after writing {n}: {e}',
                           ja: '{n} 件書き込んだところで失敗しました: {e}' },
   'wr.none':            { en: 'none',                   ja: 'なし' },
@@ -700,7 +701,7 @@ export function allTargets() {
  * Modes 6+ are refused by the firmware: writing one leaves reads unanswered
  * until a valid mode is written back. */
 export const LED_MODES = {
-  0: 'off', 1: 'static',
+  0: 'off', 1: 'static', 2: 'reactive', 3: 'ripple', 4: 'wave', 5: 'fade',
 };
 export const LED_SLOTS = 16;
 
@@ -708,38 +709,81 @@ export const LED_MODE_HELP = {
   ko: {
     0: 'LED를 완전히 끕니다.',
     1: '지정한 색상으로 키패드 백라이트를 항상 켭니다.',
+    2: '평소엔 어둡다가 키를 누를 때만 지정한 색상으로 점등합니다.',
+    3: '키를 누르면 물방울이 번지듯 파문(리플) 효과가 퍼집니다.',
+    4: '무지개 색상이 왼쪽에서 오른쪽으로 물결치듯 흐릅니다 (웨이브).',
+    5: '무지개 색상이 키패드 전체에서 은은하게 변합니다 (그라데이션).',
   },
   en: {
-    0: 'Off \u2014 no lights',
-    1: 'Always on \u2014 lights up with your chosen colours',
+    0: 'Off — no lights',
+    1: 'Always on — lights up with your chosen colours',
+    2: 'Light on press — dim until pressed, lights with your chosen colours',
+    3: 'Ripple on press — sends out a wave from the pressed key',
+    4: 'Rainbow wave — rainbow sweeps across the pad from left to right',
+    5: 'Rainbow fade — all keys shift through the rainbow together',
   },
   ja: {
     0: '消灯',
-    1: '常時点灯 \u2014 キーごとの色が出ます',
+    1: '常時点灯 — キーごとの色が出ます',
+    2: '押すと点灯 — 普段は暗く、押したキーだけ光ります',
+    3: '波紋 — 押したキーから光の波が広がります',
+    4: '虹色の波 — 左から右へ虹が流れます',
+    5: '虹色のフェード — 全キーが揃って虹色に移り変わります',
   },
 };
 
 export const LED_MODE_TRAITS = {
   0: { perKey: false, animated: false },
   1: { perKey: true,  animated: false },
+  2: { perKey: true,  animated: false },
+  3: { perKey: true,  animated: true  },
+  4: { perKey: false, animated: true  },
+  5: { perKey: false, animated: true  },
 };
 
 export const LED_NO_COLOR_REASON = {
   ko: {
     0: '소등 모드에서는 색상이 꺼집니다. 불을 켜려면 [상시 점등]을 선택하세요.',
+    4: '웨이브 모드는 펌웨어 자체 무지개 색상을 사용하므로 개별 색상은 적용되지 않습니다.',
+    5: '페이드 모드는 펌웨어 자체 무지개 색상을 사용하므로 개별 색상은 적용되지 않습니다.',
   },
   en: {
     0: 'Off mode cannot use LED colours. Choose Always on to set colours.',
+    4: 'Rainbow wave mode generates its own colours from firmware.',
+    5: 'Rainbow fade mode generates its own colours from firmware.',
   },
   ja: {
     0: '消灯モードでは LEDの色を設定できません。「常時点灯」を選んでください。',
+    4: '虹色の波モードは本体が色を作るため、パレットの色は使われません。',
+    5: '虹色のフェードモードは本体が色を作るため、パレットの色は使われません。',
   },
 };
 
 export const LED_MODE_LABELS = {
-  ko: { 0: '0 — 소등 (LED 끄기)', 1: '1 — 상시 점등 (LED 켜기)' },
-  en: { 0: '0 \u2014 Off', 1: '1 \u2014 Always on' },
-  ja: { 0: '0 \u2014 消灯', 1: '1 \u2014 常時点灯' },
+  ko: {
+    0: '소등 (LED 끄기)',
+    1: '상시 점등 (LED 켜기)',
+    2: '누를 때 점등 (리액티브)',
+    3: '파문 (누를 때 리플 확산)',
+    4: '무지개 웨이브 (흐름)',
+    5: '무지개 페이드 (전체 순환)',
+  },
+  en: {
+    0: 'Off',
+    1: 'Always on',
+    2: 'Light on press',
+    3: 'Ripple on press',
+    4: 'Rainbow wave',
+    5: 'Rainbow fade',
+  },
+  ja: {
+    0: '消灯',
+    1: '常時点灯',
+    2: '押すと点灯',
+    3: '波紋',
+    4: '虹色の波',
+    5: '虹色のフェード',
+  },
 };
 /** The display name for an LED mode number. */
 export const ledModeLabel = (n, lang = LANG) =>

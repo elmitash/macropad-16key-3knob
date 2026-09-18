@@ -498,6 +498,11 @@ src_html = src_html.replace("function exportApp(){", preset_code + "\nfunction e
 assert "applyI18n();" in src_html, "applyI18n() not found"
 src_html = src_html.replace("applyI18n();", "applyCurrentLang();", 1)
 
+# Remove duplicate ledMode option appending in boot() (applyCurrentLang already handles it)
+boot_led_add = "META.modes.forEach(m=>$('#ledMode').add(new Option(m.n+' — '+(m.label||m.name),m.n)));"
+assert boot_led_add in src_html, "boot_led_add not found"
+src_html = src_html.replace(boot_led_add, "// ledMode options populated in applyCurrentLang()")
+
 # Safe boot() error reporting (never crash if CAT is null)
 boot_catch_old = "msg(CAT.t('msg.startFail',{e:e.message}),'err');"
 boot_catch_new = "msg((CAT && CAT.t ? CAT.t('msg.startFail',{e:e.message}) : ('초기화 실패: ' + e.message)),'err');"
